@@ -1,0 +1,26 @@
+{
+  "name": "fookyou",
+  "version": "1.0.0",
+  "description": "fookyou",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sil-black-cow/fookyou.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sil-black-cow/fookyou/issues"
+  },
+  "homepage": "https://github.com/sil-black-cow/fookyou#readme",
+  "devDependencies": {
+    "@babel/core": "^7.3.4",
+    "@babel/polyfill": "^7.2.5",
+    "babel-loader": "^8.0.5",
+    "hapi": "^18.1.0",
+    "webpack": "^4.29.5"
+  }
+}
