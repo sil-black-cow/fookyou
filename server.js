@@ -18,11 +18,11 @@ server.route({
 // Start the server
 const start =  async function() {
   try {
-      await server.start();
+    await server.start();
   }
   catch (err) {
-      console.log(err);
-      process.exit(1);
+    console.log(err);
+    process.exit(1);
   }
   console.log('Server running at:', server.info.uri);
 };
