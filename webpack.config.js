@@ -14,6 +14,13 @@ module.exports = {
     publicPath: "/scripts/",
   },
 
+  resolve: {
+    modules: [
+      path.resolve(".", "src"),
+      "node_modules"
+    ],
+  },
+
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" },
@@ -25,9 +32,20 @@ module.exports = {
         test: /\.css$/,
         use: [
           'vue-style-loader',
-          'css-loader'
+          'css-loader',
+          "postcss-loader"
         ]
-      }
+      },
+      // sass
+      {
+        test: /\.scss$/,
+        use: [
+          'vue-style-loader',
+          "css-loader",
+          "postcss-loader",
+          "sass-loader"
+        ]
+      },
     ]
   },
 
