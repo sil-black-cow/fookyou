@@ -15,6 +15,13 @@ module.exports = {
     publicPath: "/scripts/",
   },
 
+  resolve: {
+    modules: [
+      path.resolve(".", "src"),
+      "node_modules"
+    ],
+  },
+
   module: {
     rules: [
       { 
@@ -32,9 +39,25 @@ module.exports = {
         test: /\.css$/,
         use: [
           'vue-style-loader',
-          'css-loader'
+          'css-loader',
+          'postcss-loader'
         ]
-      }
+      },
+
+      {
+        test: /\.scss$/,
+        include: [
+          path.resolve(".", "src")
+        ],
+        use: [
+          process.env.NODE_ENV !== 'production'
+            ? 'vue-style-loader'
+            : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader', 
+          'sass-loader'
+        ]
+      },
     ]
   },
 
